@@ -1,0 +1,40 @@
+function check()
+	local i = turtle.checkFuelLevel()
+	if i <= 1000
+		then term.write("refuel me!!!")
+		else term.write("fuel-level is:" i) os.sleep(2) os.shutdown()
+	end
+end
+
+function dig()
+	turtle.dig()
+    turtle.forward()
+    turtle.digUp()
+	turtle.digDown()
+end
+
+function set()
+	term.write("enter in the length of the tunnel")
+	term.write("must be an integer, 0 for infinite")
+    local a = read()
+    if a == 0
+    	then infinte()
+    	else run(a)
+	end
+end
+
+function infinte()
+	while true do
+		dig()
+	end
+end
+
+function run(a)
+	repeat
+		dig()
+		a = a - 1
+	untill a == 0
+end
+
+check()
+set()
