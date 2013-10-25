@@ -1,0 +1,64 @@
+function check()
+	local i = turtle.checkFuelLevel()
+    if i <= 1000
+    	then term.write("refuel me!!!")
+        else term.write("fuel-level is:" i) os.sleep(2) os.shutdown()
+	end
+end
+
+function dig()
+	turtle.dig()
+	turtle.forward()
+	turtle.digUp()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.turnRight()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.turnLeft()
+	turtle.up()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.turnLeft()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.forward()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.turnRight()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.turnLeft()
+	turtle.digDown()
+	turtle.down()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.turnRight()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.turnLeft()
+end
+
+function set()
+	term.write("enter in the length of the tunnel")
+	term.write("must be an integer, 0 for infinite")
+	term.write("4 will make a tunnel of 8 long")
+	term.write("5 will make a tunnel of 10 long")
+	term.write("and so on...")
+	local a = read()
+	if a <= 0
+		then infinite()
+		else run(a)
+	end
+end
+
+function infinite()
+	while true do
+		dig()
+	end
+end
+
+function run(a)
+	
